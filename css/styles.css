@@ -1,0 +1,271 @@
+/******************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL STYLES
+ * 2. HEADER
+ * 3. MAIN
+ * 4. LEFT SIDE
+ * 5. RIGHT SIDE
+ */
+
+/* 1. GENERAL STYLES */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Prata&display=swap");
+
+:root {
+  --txt-color-black: #020202;
+  --txt-color-red: #d23a28;
+  --txt-color-white: #f6f6f6;
+  --txt-color-gray: #7f8487;
+  --padding-3: 3rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: inherit;
+  color: var(--txt-color-black);
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Prata", serif;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #d6d6d6;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--txt-color-gray);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--txt-color-gray);
+}
+
+/* 2. HEADER */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 14vh;
+}
+
+#header h1 {
+  font-size: 3em;
+  text-align: center;
+  color: var(--txt-color-red);
+}
+
+/* 3. MAIN */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 15px #c5c5c5;
+  height: 84vh;
+  overflow: hidden;
+}
+
+/* 4. LEFT SIDE */
+.left-container {
+  padding: var(--padding-3);
+  background-color: var(--txt-color-black);
+  border-radius: 2rem 0 0 2rem;
+}
+
+.left-container h2 {
+  font-size: 2em;
+  margin-bottom: 2em;
+  color: var(--txt-color-white);
+}
+
+.left-container .option-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* form elements */
+.option-list label {
+  color: var(--txt-color-white);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.option-list select {
+  padding: 12px 40px 12px 20px;
+  width: 100%;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  background: #fff;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 7px;
+}
+
+.option-list select:focus-visible {
+  outline-color: #ee4266;
+}
+
+.btn-primary {
+  border-style: solid;
+  border-color: var(--txt-color-red);
+  background-color: var(--txt-color-red);
+  color: var(--txt-color-white);
+  padding: 16px 40px;
+  font-weight: 700;
+  width: 250px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2em;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--txt-color-white);
+  color: var(--txt-color-red);
+}
+
+/* 5. RIGHT SIDE */
+
+.right-container {
+  padding: var(--padding-3);
+  background-color: var(--txt-color-white);
+  border-radius: 0 2rem 2rem 0;
+  overflow-y: scroll;
+}
+
+.h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.recipe-image {
+  grid-column: span 8 / span 8;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 2em 0 2em 0;
+}
+
+.right-block {
+  grid-column: span 4 / span 4;
+}
+
+.extra-block p {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.extra-block span {
+  display: inline-block;
+  color: var(--txt-color-gray);
+  margin-bottom: 1rem;
+}
+
+.ingredients-block p {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.ingredients-list,
+.instruction-list {
+  list-style: none;
+  padding: 0;
+}
+
+:is(.ingredients-list li, .instruction-list li) {
+  margin-bottom: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.ingredients-list li {
+  list-style-type: none;
+  color: var(--txt-color-gray);
+  margin-bottom: 0.5rem;
+}
+
+.instruction-list li {
+  counter-increment: step-counter;
+  margin-bottom: 2rem;
+  color: var(--txt-color-gray);
+}
+
+.instruction-list li:before {
+  content: "Step " counter(step-counter);
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--txt-color-black);
+  display: block;
+}
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 */
+  position: relative;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}

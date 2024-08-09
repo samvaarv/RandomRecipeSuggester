@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Recipe Suggester</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1>Random Recipe Suggester</h1>
+    </header>
+    <main id="main">
+      <div class="container">
+        <div class="left-container">
+          <h2>Choose your main Ingredients:</h2>
+          <div class="option-list">
+            <div>
+              <label for="vegetable">Choose a vegetable:</label>
+              <select id="vegetable">
+                <option value="carrots">Carrots</option>
+                <option value="broccoli">Broccoli</option>
+                <option value="spinach">Spinach</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="protein">Choose a protein:</label>
+              <select id="protein">
+                <option value="chicken">Chicken</option>
+                <option value="beef">Beef</option>
+                <option value="tofu">Tofu</option>
+              </select>
+            </div>
+
+            <div>
+              <button class="btn-primary" id="generateRecipe">
+                Get Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-container">
+          <div id="intro-text">
+            <h2>Let your other brain decide what you crave for today</h2>
+            <p><strong>It's just a click away!!!</strong></p>
+            <p>
+              Select the Ingredients you have and hit that "GET RECIPE" button.
+            </p>
+            <p>
+              If you don't like what you get, just choose different option or
+              keep on pressing the "GET RECIPE" until you find what you have
+              been craving for.
+            </p>
+          </div>
+
+          <!-- Recepie will be publish inside this div through Javascript -->
+          <div id="recipe"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
